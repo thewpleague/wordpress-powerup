@@ -1,0 +1,4 @@
+Shortcodes
+==========
+
+Snippets of shortcodes.
