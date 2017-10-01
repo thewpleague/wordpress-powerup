@@ -12,6 +12,11 @@
  * Author URI:        http://thewpleague.com/
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 add_filter( 'wp_mail_from', 'wpl_mail_from' );
 /**
  * Email addres to send from.
