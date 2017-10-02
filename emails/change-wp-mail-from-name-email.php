@@ -4,7 +4,7 @@
  * @package           WP_POWERUP
  *
  * @wordpress-plugin
- * Plugin Name:       Change WordPress Mail From and Name
+ * Plugin Name:       Change WordPress Mail From Name and Email Address
  * Plugin URI:        http://thewpleague.com/wp-powerup/
  * Description:       This snippet will change from name and email address of emails sent from WordPress.
  * Version:           1.0.0
