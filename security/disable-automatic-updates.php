@@ -6,12 +6,10 @@
  * @wordpress-plugin
  * Plugin Name:       Disable WordPress Update
  * Plugin URI:        http://thewpleague.com/wp-powerup/
- * Description:       This snippet let’s you disable WordPress REST API, if you for some reason don’t want to use it.
+ * Description:       This snippet let’s you disable all automatic updates of WordPress core, themes, plugins, translations.
  * Version:           1.0.0
  * Author:            TheWpLeague
  * Author URI:        http://thewpleague.com/
- *
- * To secure that your client doesn’t mess up the theme you created for him by updating to a WP-version your theme doesn’t have support for, just add this to disable WordPress Update function.
  */
 
 // If this file is called directly, abort.
@@ -19,4 +17,24 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-add_filter( 'pre_site_transient_update_core', '__return_null' );
+// Core
+add_filter( 'automatic_updater_disabled', '__return_true' );
+add_filter( 'auto_update_core', '__return_false' );
+add_filter( 'allow_minor_auto_core_updates', '__return_false' );
+add_filter( 'allow_major_auto_core_updates', '__return_false' );
+add_filter( 'allow_dev_auto_core_updates', '__return_false' );
+
+// Plugins
+add_filter( 'auto_update_plugin', '__return_false' );
+
+// Thems
+add_filter( 'auto_update_theme', '__return_false' );
+
+// Translation
+add_filter( 'auto_update_translation', '__return_false' );
+
+// Update emails
+add_filter( 'auto_core_update_send_email', '__return_false' );
+add_filter( 'send_core_update_notification_email', '__return_false' );
+add_filter( 'automatic_updates_send_debug_email', '__return_false' );
+add_filter( 'automatic_updates_is_vcs_checkout', '__return_true' );

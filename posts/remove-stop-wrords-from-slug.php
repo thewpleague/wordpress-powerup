@@ -1,12 +1,19 @@
 <?php
-
-/*How to Better SEO automatically remove stop words from slug
-Adding this snippet to the functions.php of your wordpress theme will automatically remove stop words from the slug for better SEO. This is an updated version of the (Better SEO)
-
-( example screenshot ) This version was contributed by Alexandre M. Cajaty. I only added a small selection of stop words within $keys_false for an extensive list of stop words (download) 429 words.
+/**
+* @link              http://thewpleague.com
+* @package           WP_POWERUP
+*
+* @wordpress-plugin
+* Plugin Name:       Better SEO automatically remove stop words from slug
+* Plugin URI:        http://thewpleague.com/wp-powerup/
+* Description:       The snippet will automatically remove stop words from the slug for better SEO.
+* Version:           1.0.0
+* Author:            TheWpLeague
+* Author URI:        http://thewpleague.com/
 */
-add_filter( 'sanitize_title', 'remove_false_words' );
-function remove_false_words( $slug ) {
+
+add_filter( 'sanitize_title', 'wpl_better_seo_remove_stop_words' );
+function wpl_better_seo_remove_stop_words( $slug ) {
 
 	if ( ! is_admin() ) {
 		return $slug;

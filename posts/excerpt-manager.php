@@ -1,7 +1,18 @@
-How to Custom excerpt length
-Adding this PHP code to the functions.php file of your wordpress theme will allow you to set the length of your excerpt rather then the default 55 character limit.
+<?php
+/**
+* @link              http://thewpleague.com
+* @package           WP_POWERUP
+*
+* @wordpress-plugin
+* Plugin Name:       Make excerpt better
+* Plugin URI:        http://thewpleague.com/wp-powerup/
+* Description:       The snippet allows you to make your excerpt better thorughout the website.
+* Version:           1.0.0
+* Author:            TheWpLeague
+* Author URI:        http://thewpleague.com/
+*/
 
-function excerptLength($length) {
-        return 100;
+add_filter( 'excerpt_length', 'wpl_excerpt_length' );
+function wpl_excerpt_length( $length ) {
+	return 100;
 }
-add_filter('excerpt_length', 'excerptLength');

@@ -1,10 +1,18 @@
-Mobile address bar color changer
-
-After you install the plugin click the Settings link or go to Settings->Mobile bar color changer, click the select color field and either use the color picker or type the hex code for the color you want your bar to be.
-
+<?php
+/**
+* @link              http://thewpleague.com
+* @package           WP_POWERUP
+*
+* @wordpress-plugin
+* Plugin Name:       Mobile address bar color changer
+* Plugin URI:        http://thewpleague.com/wp-powerup/
+* Description:       The snippet below allows you to change color of mobile browser address bar.
+* Version:           1.0.0
+* Author:            TheWpLeague
+* Author URI:        http://thewpleague.com/
+*/
 
 // Chrome, Firefox OS, Opera and Vivaldi
-
-add_action('wp_head', function() {
-	<meta name="theme-color" content="'.$color.'">
+add_action( 'wp_head', function() {
+	echo '<meta name="theme-color" content="#ff0">';
 });
